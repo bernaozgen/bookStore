@@ -1,0 +1,7 @@
+package com.brnozgn.demo.business.concretes;
+
+import com.brnozgn.demo.business.abstracts.CategoryService;
+
+public class CategoryManager implements CategoryService {
+
+}

@@ -1,0 +1,58 @@
+package com.brnozgn.demo.business.concretes;
+
+import java.util.UUID;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.brnozgn.demo.business.abstracts.CategoryService;
+import com.brnozgn.demo.business.constants.Messages;
+import com.brnozgn.demo.business.dto.requests.create.CreateCategoryRequest;
+import com.brnozgn.demo.business.dto.requests.update.UpdateCategoryRequest;
+import com.brnozgn.demo.business.dto.responses.create.CreateCategoryResponse;
+import com.brnozgn.demo.business.dto.responses.update.UpdateCategoryResponse;
+import com.brnozgn.demo.dataAccess.CategoryRepository;
+import com.brnozgn.demo.entities.Category;
+import com.brnozgn.demo.utilities.mapping.ModelMapperConfig;
+import com.brnozgn.demo.utilities.results.DataResult;
+import com.brnozgn.demo.utilities.results.SuccessDataResult;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class CategoryManager implements CategoryService {
+
+	private CategoryRepository categoryRepository;
+	private ModelMapper modelMapper;
+
+	@Override
+	public DataResult<CreateCategoryResponse> addCategory(CreateCategoryRequest createCategoryRequest) {
+		Category category = modelMapper.map(createCategoryRequest, Category.class);
+		category.setId(UUID.randomUUID().toString());
+		categoryRepository.save(category);
+
+		CreateCategoryResponse response = this.modelMapper.map(category,
+				CreateCategoryResponse.class);
+
+		return new SuccessDataResult<CreateCategoryResponse>(response, Messages.AddCategory);
+	}
+
+	@Override
+	public DataResult<UpdateCategoryResponse> updateCategory(UpdateCategoryRequest updateCategoryRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	@Override
+//	public DataResult<UpdateCategoryResponse> updateCategory(UpdateCategoryRequest updateCategoryRequest) {
+//		Category category = this.modelMapperService.forRequest().map(updateCategoryRequest, Category.class);
+//		this.categoryRepository.save(category);
+//		UpdateCategoryResponse response = this.modelMapperService.forResponse().map(category,
+//				UpdateCategoryResponse.class);
+//		
+//
+//		return new SuccessDataResult<UpdateCategoryResponse>(response,Messages.UpdatedCategory);
+//	}
+
+}

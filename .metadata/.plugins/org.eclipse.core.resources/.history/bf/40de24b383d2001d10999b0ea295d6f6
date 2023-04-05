@@ -1,0 +1,5 @@
+package com.brnozgn.demo.business.dto.requests.update;
+
+public class CreateCategoryRequest {
+
+}

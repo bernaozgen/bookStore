@@ -1,0 +1,5 @@
+package com.brnozgn.demo.configurations.exceptions;
+
+public class FieldExceptionConfig {
+
+}

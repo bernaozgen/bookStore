@@ -1,0 +1,5 @@
+package com.brnozgn.demo.api;
+
+public interface controllers {
+
+}

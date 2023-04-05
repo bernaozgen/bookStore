@@ -1,0 +1,39 @@
+package com.brnozgn.demo.business.concretes;
+
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+import com.brnozgn.demo.business.abstracts.BookService;
+import com.brnozgn.demo.business.constants.Messages;
+import com.brnozgn.demo.business.dto.requests.create.CreateBookRequest;
+import com.brnozgn.demo.business.dto.responses.create.CreateBookResponse;
+import com.brnozgn.demo.dataAccess.BookRepository;
+import com.brnozgn.demo.entities.Book;
+import com.brnozgn.demo.utilities.mapping.ModelMapperService;
+import com.brnozgn.demo.utilities.results.DataResult;
+import com.brnozgn.demo.utilities.results.SuccessDataResult;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+@Service
+public class BookManager implements BookService {
+
+	private BookRepository bookRepository;
+	private ModelMapperService modelMapperService;
+
+	@Override
+	public DataResult<CreateBookResponse> addBook(CreateBookRequest createBookRequest) {
+		Book book  = this.modelMapperService.forRequest().map(createBookRequest, Book.class);
+		book.setId(UUID.randomUUID().toString());
+
+		this.bookRepository.save(book);
+
+		CreateBookResponse createBookResponse = this.modelMapperService.forResponse().map(book,
+				CreateBookResponse.class);
+		return new SuccessDataResult<CreateBookResponse>(createBookResponse, Messages.AddBook);
+	}
+}

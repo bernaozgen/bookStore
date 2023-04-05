@@ -1,0 +1,8 @@
+package com.brnozgn.demo.business.constants;
+
+public class Messages {
+
+	public static final String AddBook = "CREATED BOOK";
+    public static final String UpdatedBook = "UPDATED BOOK";
+
+}

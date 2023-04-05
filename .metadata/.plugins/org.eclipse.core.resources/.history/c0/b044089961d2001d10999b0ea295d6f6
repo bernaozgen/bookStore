@@ -1,0 +1,8 @@
+package com.brnozgn.demo.business.abstracts;
+
+import com.brnozgn.demo.utilities.results.DataResult;
+
+public interface CategoryService {
+
+	DataResult<T>
+}
