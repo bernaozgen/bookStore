@@ -3,7 +3,9 @@ package com.brnozgn.demo.api.controllers;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +21,9 @@ import com.brnozgn.demo.business.dto.responses.get.getAll.GetAllCategoryResponse
 import com.brnozgn.demo.business.dto.responses.get.getById.GetByCategoryId;
 import com.brnozgn.demo.business.dto.responses.update.UpdateCategoryResponse;
 import com.brnozgn.demo.utilities.results.DataResult;
+import com.brnozgn.demo.utilities.results.Result;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RequestMapping("api/categories")
@@ -29,13 +33,13 @@ public class CategoriesController {
 	private CategoryService categoryService;
 
 	@PostMapping
-	@ResponseStatus(code=HttpStatus.CREATED) //201 döndürsün diye
-	public DataResult<CreateCategoryResponse> addCategory(@RequestBody CreateCategoryRequest createCategoryRequest) {
+	@ResponseStatus(code = HttpStatus.CREATED) // 201 döndürsün diye
+	public DataResult<CreateCategoryResponse> addCategory(@RequestBody @Valid CreateCategoryRequest createCategoryRequest) {
 		return this.categoryService.addCategory(createCategoryRequest);
 	}
 
 	@PutMapping
-	public DataResult<UpdateCategoryResponse> updateCategory(@RequestBody UpdateCategoryRequest updateCategoryRequest) {
+	public DataResult<UpdateCategoryResponse> updateCategory(@RequestBody @Valid UpdateCategoryRequest updateCategoryRequest) {
 		return this.categoryService.updateCategory(updateCategoryRequest);
 	}
 
@@ -44,9 +48,14 @@ public class CategoriesController {
 		return this.categoryService.getAll();
 	}
 
-	@GetMapping("/{id}") //veriable
-	public DataResult<GetByCategoryId> getById(String id) {
+	@GetMapping("/{id}")
+	public DataResult<GetByCategoryId> getById(@PathVariable @Valid String id) {
 		return this.categoryService.getById(id);
+	}
+
+	@DeleteMapping("/{id}")
+	public Result delete(@PathVariable @Valid String id) {
+		return this.categoryService.delete(id);
 	}
 
 }

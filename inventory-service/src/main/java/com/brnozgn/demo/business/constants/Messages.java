@@ -14,5 +14,6 @@ public class Messages {
 	public static final String ListedCategory = "LISTED CATEGORY";
 	public static final String CategoryIdNotFound = "Category Id Not Found";
 	public static final String DeletedCategory = "DELETED CATEGORY";
+	public static final String CategoryUsed = "This Category is used";
 
 }

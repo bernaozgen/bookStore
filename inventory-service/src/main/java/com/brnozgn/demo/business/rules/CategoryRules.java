@@ -18,6 +18,13 @@ public class CategoryRules {
 			throw new BusinessException(Messages.CategoryIdNotFound);
 			
 		}
+		
+	}
+	
+	public void existsByName(String name) {
+		if(this.repository.findByName(name) != null) {
+			throw new BusinessException(Messages.CategoryUsed);
+		}
 	}
 
 }

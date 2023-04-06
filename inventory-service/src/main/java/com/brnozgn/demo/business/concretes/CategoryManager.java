@@ -35,6 +35,7 @@ public class CategoryManager implements CategoryService {
 
 	@Override
 	public DataResult<CreateCategoryResponse> addCategory(CreateCategoryRequest createCategoryRequest) {
+		this.rules.existsByName(createCategoryRequest.getName());
 		Category category = modelMapper.map(createCategoryRequest, Category.class);
 		category.setId(UUID.randomUUID().toString());
 		categoryRepository.save(category);
@@ -46,6 +47,7 @@ public class CategoryManager implements CategoryService {
 
 	public DataResult<UpdateCategoryResponse> updateCategory(UpdateCategoryRequest updateCategoryRequest) {
 		this.rules.existById(updateCategoryRequest.getId());
+		this.rules.existsByName(updateCategoryRequest.getName());
 		Category category = this.modelMapper.map(updateCategoryRequest, Category.class);
 		this.categoryRepository.save(category);
 		UpdateCategoryResponse response = this.modelMapper.map(category, UpdateCategoryResponse.class);
@@ -62,14 +64,12 @@ public class CategoryManager implements CategoryService {
 	}
 
 	public DataResult<GetByCategoryId> getById(String id) {
-
 		this.rules.existById(id);
 		Category category = this.categoryRepository.findById(id).get();
 		GetByCategoryId getByCategoryId = this.modelMapper.map(category, GetByCategoryId.class);
 
 		return new SuccessDataResult<GetByCategoryId>(getByCategoryId, Messages.ListedCategory);
 	}
-
 
 	public Result delete(String id) {
 		this.rules.existById(id);
