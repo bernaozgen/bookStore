@@ -16,4 +16,12 @@ public class Messages {
 	public static final String DeletedCategory = "DELETED CATEGORY";
 	public static final String CategoryUsed = "This Category is used";
 
+	// PublishingHouse
+	public static final String CreatedHouse = "CREATED PUBLISHING HOUSE";
+	public static final String UpdatedHouse = "UPDATED PUBLISHING HOUSE ";
+	public static final String ListedHouse = "LISTED PUBLISHING HOUSE";
+	public static final String DeletedHouse = "DELETED PUBLISHING HOUSE";
+	public static final String HouseIdNotFound = "Publishing House Id Not Found";
+	public static final String HouseNameUsed = "This Publishing house name is used";
+
 }
