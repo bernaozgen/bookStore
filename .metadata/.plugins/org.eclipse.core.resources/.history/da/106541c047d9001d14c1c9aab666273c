@@ -1,0 +1,8 @@
+package com.brnozgn.demo.business.rules;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class NovelistRules {
+
+}

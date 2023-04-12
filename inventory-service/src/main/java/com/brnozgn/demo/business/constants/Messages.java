@@ -24,4 +24,12 @@ public class Messages {
 	public static final String HouseIdNotFound = "Publishing House Id Not Found";
 	public static final String HouseNameUsed = "This Publishing house name is used";
 
+	// Novelist
+	public static final String CreatedNovelist = "CREATED NOVELIST ";
+	public static final String UpdatedNovelist = "UPDATED NOVELIST";
+	public static final String ListedNovelist = "LISTED NOVELIST";
+	public static final String DeletedNovelist = "DELETED NOVELIST";
+	public static final String NovelistIdNotFound = "Novelist Id Not Found";
+	public static final String Novelist = "There is a novelist";
+
 }

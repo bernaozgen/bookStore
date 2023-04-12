@@ -1,0 +1,16 @@
+package com.brnozgn.demo.business.concretes;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.brnozgn.demo.business.abstracts.NovelistService;
+import com.brnozgn.demo.dataAccess.NovelistRepository;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class NovelistManager implements NovelistService {
+	private NovelistRepository repository;
+	private ModelMapper modelMapper;
+}

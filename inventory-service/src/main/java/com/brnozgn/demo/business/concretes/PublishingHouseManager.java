@@ -13,7 +13,7 @@ import com.brnozgn.demo.business.dto.requests.create.CreatePublishingHouseReques
 import com.brnozgn.demo.business.dto.requests.update.UpdatePublishingHouseRequest;
 import com.brnozgn.demo.business.dto.responses.create.CreatePublishingHouseResponse;
 import com.brnozgn.demo.business.dto.responses.get.getAll.GetAllPublishingHouseResponse;
-import com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseId;
+import com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseIdResponse;
 import com.brnozgn.demo.business.dto.responses.update.UpdatePublishingHouseResponse;
 import com.brnozgn.demo.business.rules.PublishingHouseRules;
 import com.brnozgn.demo.dataAccess.PublishingHouseRepository;
@@ -61,11 +61,11 @@ public class PublishingHouseManager implements PublishingHouseService {
 		return new SuccessDataResult<List<GetAllPublishingHouseResponse>>(responses, Messages.ListedHouse);
 	}
 
-	public DataResult<GetByPublishingHouseId> getById(String id) {
+	public DataResult<GetByPublishingHouseIdResponse> getById(String id) {
 		this.rules.checkIfHouseExistsById(id);
 		PublishingHouse house = this.repository.findById(id).get();
-		GetByPublishingHouseId houseId = this.modelMapper.map(house, GetByPublishingHouseId.class);
-		return new SuccessDataResult<GetByPublishingHouseId>(houseId, Messages.ListedHouse);
+		GetByPublishingHouseIdResponse houseId = this.modelMapper.map(house, GetByPublishingHouseIdResponse.class);
+		return new SuccessDataResult<GetByPublishingHouseIdResponse>(houseId, Messages.ListedHouse);
 	}
 
 	

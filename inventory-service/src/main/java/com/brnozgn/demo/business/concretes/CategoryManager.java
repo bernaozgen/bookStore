@@ -13,7 +13,7 @@ import com.brnozgn.demo.business.dto.requests.create.CreateCategoryRequest;
 import com.brnozgn.demo.business.dto.requests.update.UpdateCategoryRequest;
 import com.brnozgn.demo.business.dto.responses.create.CreateCategoryResponse;
 import com.brnozgn.demo.business.dto.responses.get.getAll.GetAllCategoryResponse;
-import com.brnozgn.demo.business.dto.responses.get.getById.GetByCategoryId;
+import com.brnozgn.demo.business.dto.responses.get.getById.GetByCategoryIdResponse;
 import com.brnozgn.demo.business.dto.responses.update.UpdateCategoryResponse;
 import com.brnozgn.demo.business.rules.CategoryRules;
 import com.brnozgn.demo.dataAccess.CategoryRepository;
@@ -63,12 +63,12 @@ public class CategoryManager implements CategoryService {
 		return new SuccessDataResult<List<GetAllCategoryResponse>>(allCategoryResponses, Messages.ListedCategory);
 	}
 
-	public DataResult<GetByCategoryId> getById(String id) {
+	public DataResult<GetByCategoryIdResponse> getById(String id) {
 		this.rules.existById(id);
 		Category category = this.categoryRepository.findById(id).get();
-		GetByCategoryId getByCategoryId = this.modelMapper.map(category, GetByCategoryId.class);
+		GetByCategoryIdResponse getByCategoryId = this.modelMapper.map(category, GetByCategoryIdResponse.class);
 
-		return new SuccessDataResult<GetByCategoryId>(getByCategoryId, Messages.ListedCategory);
+		return new SuccessDataResult<GetByCategoryIdResponse>(getByCategoryId, Messages.ListedCategory);
 	}
 
 	public Result delete(String id) {

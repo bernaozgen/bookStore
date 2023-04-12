@@ -1,0 +1,13 @@
+package com.brnozgn.demo.business.concretes;
+
+import org.springframework.stereotype.Service;
+
+import com.brnozgn.demo.business.abstracts.NovelistService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class NovelistManager implements NovelistService {
+
+}

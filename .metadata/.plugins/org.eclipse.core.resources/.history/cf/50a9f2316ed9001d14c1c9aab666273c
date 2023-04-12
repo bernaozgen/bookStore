@@ -1,0 +1,20 @@
+package com.brnozgn.demo.business.rules;
+
+import com.brnozgn.demo.business.constants.Messages;
+import com.brnozgn.demo.dataAccess.NovelistRepository;
+import com.brnozgn.demo.utilities.exceptions.BusinessException;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class NovelistRules {
+	private NovelistRepository repository;
+
+	public void checkIfExistsNovelistId(String id) {
+		if (this.repository.findById(id).get() == null) {
+			throw new BusinessException(Messages.NovelistIdNotFound);
+		}
+
+	}
+
+}

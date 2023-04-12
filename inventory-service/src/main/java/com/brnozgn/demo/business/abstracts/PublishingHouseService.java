@@ -6,7 +6,7 @@ import com.brnozgn.demo.business.dto.requests.create.CreatePublishingHouseReques
 import com.brnozgn.demo.business.dto.requests.update.UpdatePublishingHouseRequest;
 import com.brnozgn.demo.business.dto.responses.create.CreatePublishingHouseResponse;
 import com.brnozgn.demo.business.dto.responses.get.getAll.GetAllPublishingHouseResponse;
-import com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseId;
+import com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseIdResponse;
 import com.brnozgn.demo.business.dto.responses.update.UpdatePublishingHouseResponse;
 import com.brnozgn.demo.utilities.results.DataResult;
 import com.brnozgn.demo.utilities.results.Result;
@@ -18,7 +18,7 @@ public interface PublishingHouseService {
 
 	DataResult<List<GetAllPublishingHouseResponse>> getAll();
 
-	DataResult<GetByPublishingHouseId> getById(String id);
+	DataResult<GetByPublishingHouseIdResponse> getById(String id);
 
 	Result delete(String id);
 }

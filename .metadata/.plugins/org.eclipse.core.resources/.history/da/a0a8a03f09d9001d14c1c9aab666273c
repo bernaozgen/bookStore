@@ -1,0 +1,5 @@
+package com.brnozgn.demo.business.dto.responses.get.getAll;
+
+public class GetAllNovelist {
+
+}

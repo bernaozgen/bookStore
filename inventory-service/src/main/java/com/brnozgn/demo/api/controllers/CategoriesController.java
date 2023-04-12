@@ -18,7 +18,7 @@ import com.brnozgn.demo.business.dto.requests.create.CreateCategoryRequest;
 import com.brnozgn.demo.business.dto.requests.update.UpdateCategoryRequest;
 import com.brnozgn.demo.business.dto.responses.create.CreateCategoryResponse;
 import com.brnozgn.demo.business.dto.responses.get.getAll.GetAllCategoryResponse;
-import com.brnozgn.demo.business.dto.responses.get.getById.GetByCategoryId;
+import com.brnozgn.demo.business.dto.responses.get.getById.GetByCategoryIdResponse;
 import com.brnozgn.demo.business.dto.responses.update.UpdateCategoryResponse;
 import com.brnozgn.demo.utilities.results.DataResult;
 import com.brnozgn.demo.utilities.results.Result;
@@ -49,7 +49,7 @@ public class CategoriesController {
 	}
 
 	@GetMapping("/{id}")
-	public DataResult<GetByCategoryId> getById(@PathVariable @Valid String id) {
+	public DataResult<GetByCategoryIdResponse> getById(@PathVariable @Valid String id) {
 		return this.categoryService.getById(id);
 	}
 

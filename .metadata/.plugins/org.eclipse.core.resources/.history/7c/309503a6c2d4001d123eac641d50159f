@@ -1,0 +1,15 @@
+package com.brnozgn.demo.api.controllers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.brnozgn.demo.business.abstracts.NovelistService;
+
+import lombok.AllArgsConstructor;
+
+@RestController
+@RequestMapping("api/novelists")
+@AllArgsConstructor
+public class NovelistsController {
+	private NovelistService service;
+}

@@ -18,7 +18,7 @@ import com.brnozgn.demo.business.dto.requests.create.CreatePublishingHouseReques
 import com.brnozgn.demo.business.dto.requests.update.UpdatePublishingHouseRequest;
 import com.brnozgn.demo.business.dto.responses.create.CreatePublishingHouseResponse;
 import com.brnozgn.demo.business.dto.responses.get.getAll.GetAllPublishingHouseResponse;
-import com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseId;
+import com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseIdResponse;
 import com.brnozgn.demo.business.dto.responses.update.UpdatePublishingHouseResponse;
 import com.brnozgn.demo.utilities.results.DataResult;
 import com.brnozgn.demo.utilities.results.Result;
@@ -50,7 +50,7 @@ public class PublishingHousesController {
 	}
 
 	@GetMapping("/{id}")
-	public DataResult<GetByPublishingHouseId> getById(@PathVariable @Valid String id) {
+	public DataResult<GetByPublishingHouseIdResponse> getById(@PathVariable @Valid String id) {
 		return this.service.getById(id);
 	}
 
