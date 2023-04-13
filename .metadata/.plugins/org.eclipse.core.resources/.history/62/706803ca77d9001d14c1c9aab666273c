@@ -1,0 +1,5 @@
+package com.brnozgn.demo.business.concretes;
+
+public class BookManager {
+
+}

@@ -7,6 +7,7 @@ public class Messages {
 	public static final String UpdatedBook = "UPDATED BOOK";
 	public static final String DeletedBook = "DELETED BOOK";
 	public static final String ListedBook = "Book Listed";
+	public static final String BookIdNotFound = "Book Id Not Found";
 
 	// Category
 	public static final String AddCategory = "CREATED CATEGORY ";
@@ -31,5 +32,6 @@ public class Messages {
 	public static final String DeletedNovelist = "DELETED NOVELIST";
 	public static final String NovelistIdNotFound = "Novelist Id Not Found";
 	public static final String Novelist = "There is a novelist";
+
 
 }
