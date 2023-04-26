@@ -37,14 +37,14 @@ public class PublishingHouseManager implements PublishingHouseService {
 	public DataResult<CreatePublishingHouseResponse> add(CreatePublishingHouseRequest request) {
 		this.rules.checkIfHouseExistByName(request.getName());
 		PublishingHouse house = this.modelMapper.map(request, PublishingHouse.class);
-		house.setId(UUID.randomUUID().toString());
+		house.setPId(UUID.randomUUID().toString());
 		this.repository.save(house);
 		CreatePublishingHouseResponse response = this.modelMapper.map(house, CreatePublishingHouseResponse.class);
 		return new SuccessDataResult<CreatePublishingHouseResponse>(response, Messages.CreatedHouse);
 	}
 
 	public DataResult<UpdatePublishingHouseResponse> update(UpdatePublishingHouseRequest request) {
-	    this.rules.checkIfHouseExistsById(request.getId());
+	    this.rules.checkIfHouseExistsById(request.getPId());
 	    this.rules.checkIfHouseExistByName(request.getName());
 		PublishingHouse house = this.modelMapper.map(request, PublishingHouse.class);
 		this.repository.save(house);
@@ -61,17 +61,17 @@ public class PublishingHouseManager implements PublishingHouseService {
 		return new SuccessDataResult<List<GetAllPublishingHouseResponse>>(responses, Messages.ListedHouse);
 	}
 
-	public DataResult<GetByPublishingHouseIdResponse> getById(String id) {
-		this.rules.checkIfHouseExistsById(id);
-		PublishingHouse house = this.repository.findById(id).get();
+	public DataResult<GetByPublishingHouseIdResponse> getById(String pId) {
+		this.rules.checkIfHouseExistsById(pId);
+		PublishingHouse house = this.repository.findById(pId).get();
 		GetByPublishingHouseIdResponse houseId = this.modelMapper.map(house, GetByPublishingHouseIdResponse.class);
 		return new SuccessDataResult<GetByPublishingHouseIdResponse>(houseId, Messages.ListedHouse);
 	}
 
 	
-	public Result delete(String id) {
-		this.rules.checkIfHouseExistsById(id);
-		this.repository.deleteById(id);
+	public Result delete(String pId) {
+		this.rules.checkIfHouseExistsById(pId);
+		this.repository.deleteById(pId);
 		return new SuccessResult(Messages.DeletedHouse);
 	}
 

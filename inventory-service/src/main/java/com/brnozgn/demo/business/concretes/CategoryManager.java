@@ -37,7 +37,7 @@ public class CategoryManager implements CategoryService {
 	public DataResult<CreateCategoryResponse> addCategory(CreateCategoryRequest createCategoryRequest) {
 		this.rules.existsByName(createCategoryRequest.getName());
 		Category category = modelMapper.map(createCategoryRequest, Category.class);
-		category.setId(UUID.randomUUID().toString());
+		category.setCId(UUID.randomUUID().toString());
 		categoryRepository.save(category);
 
 		CreateCategoryResponse response = this.modelMapper.map(category, CreateCategoryResponse.class);
@@ -46,7 +46,7 @@ public class CategoryManager implements CategoryService {
 	}
 
 	public DataResult<UpdateCategoryResponse> updateCategory(UpdateCategoryRequest updateCategoryRequest) {
-		this.rules.existById(updateCategoryRequest.getId());
+		this.rules.existById(updateCategoryRequest.getCId());
 		this.rules.existsByName(updateCategoryRequest.getName());
 		Category category = this.modelMapper.map(updateCategoryRequest, Category.class);
 		this.categoryRepository.save(category);
@@ -63,17 +63,17 @@ public class CategoryManager implements CategoryService {
 		return new SuccessDataResult<List<GetAllCategoryResponse>>(allCategoryResponses, Messages.ListedCategory);
 	}
 
-	public DataResult<GetByCategoryIdResponse> getById(String id) {
-		this.rules.existById(id);
-		Category category = this.categoryRepository.findById(id).get();
+	public DataResult<GetByCategoryIdResponse> getById(String cId) {
+		this.rules.existById(cId);
+		Category category = this.categoryRepository.findById(cId).get();
 		GetByCategoryIdResponse getByCategoryId = this.modelMapper.map(category, GetByCategoryIdResponse.class);
 
 		return new SuccessDataResult<GetByCategoryIdResponse>(getByCategoryId, Messages.ListedCategory);
 	}
 
-	public Result delete(String id) {
-		this.rules.existById(id);
-		this.categoryRepository.deleteById(id);
+	public Result delete(String cId) {
+		this.rules.existById(cId);
+		this.categoryRepository.deleteById(cId);
 		return new SuccessResult(Messages.DeletedCategory);
 	}
 

@@ -13,8 +13,8 @@ import lombok.AllArgsConstructor;
 public class PublishingHouseRules {
 	private PublishingHouseRepository repository;
 
-	public void checkIfHouseExistsById(String id) {
-		if(this.repository.findById(id).get()==null) {
+	public void checkIfHouseExistsById(String pId) {
+		if(this.repository.findById(pId).get()==null) {
 			throw new BusinessException(Messages.HouseIdNotFound);
 		}
 	}

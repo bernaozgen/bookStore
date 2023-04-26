@@ -18,7 +18,7 @@ public interface NovelistService {
 
 	DataResult<List<GetAllNovelistResponse>> getAll();
 
-	DataResult<GetByNovelistIdResponse> getById(String id);
+	DataResult<GetByNovelistIdResponse> getById(String nId);
 
-	Result delete(String id);
+	Result delete(String nId);
 }

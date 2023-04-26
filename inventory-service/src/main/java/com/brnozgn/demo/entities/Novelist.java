@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "novelists")
 public class Novelist {
 	@Id
-	@Column(name = "id")
-	private String id;
+	@Column(name = "nId")
+	private String nId;
 
 	@Column(name = "name")
 	private String name;

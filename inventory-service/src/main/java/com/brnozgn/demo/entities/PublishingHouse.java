@@ -19,8 +19,8 @@ import lombok.NoArgsConstructor;
 public class PublishingHouse {
 
 	@Id
-	@Column(name = "id")
-	private String id;
+	@Column(name = "pId")
+	private String pId;
 
 	@Column(name = "name")
 	private String name;

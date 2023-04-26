@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetAllPublishingHouseResponse {
-	private String id;
+	private String pId;
 	private String name;
 	private String explication;
 }

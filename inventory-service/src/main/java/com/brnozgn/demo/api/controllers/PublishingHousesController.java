@@ -49,14 +49,14 @@ public class PublishingHousesController {
 		return this.service.getAll();
 	}
 
-	@GetMapping("/{id}")
-	public DataResult<GetByPublishingHouseIdResponse> getById(@PathVariable @Valid String id) {
-		return this.service.getById(id);
+	@GetMapping("/{pId}")
+	public DataResult<GetByPublishingHouseIdResponse> getById(@PathVariable @Valid String pId) {
+		return this.service.getById(pId);
 	}
 
-	@DeleteMapping("/{id}")
-	public Result delete(@PathVariable @Valid String id) {
-		return this.service.delete(id);
+	@DeleteMapping("/{pId}")
+	public Result delete(@PathVariable @Valid String pId) {
+		return this.service.delete(pId);
 	}
 
 }

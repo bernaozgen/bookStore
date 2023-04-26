@@ -19,8 +19,8 @@ import lombok.NoArgsConstructor;
 public class Category {
 
 	@Id
-	@Column(name = "id")
-	private String id;
+	@Column(name = "cId")
+	private String cId;
 
 	@Column(name = "categoryName")
 	private String name;

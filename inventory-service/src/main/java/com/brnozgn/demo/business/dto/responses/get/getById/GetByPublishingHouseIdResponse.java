@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetByPublishingHouseIdResponse {
 
-	private String id;
+	private String pId;
 	private String name;
 	private String explication;
 }

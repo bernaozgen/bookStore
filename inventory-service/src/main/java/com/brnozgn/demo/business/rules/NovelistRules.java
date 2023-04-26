@@ -13,8 +13,8 @@ import lombok.AllArgsConstructor;
 public class NovelistRules {
 	private NovelistRepository repository;
 
-	public void checkIfExistsNovelistId(String id) {
-		if (this.repository.findById(id).get() == null) {
+	public void checkIfExistsNovelistId(String nId) {
+		if (this.repository.findById(nId).get() == null) {
 			throw new BusinessException(Messages.NovelistIdNotFound);
 		}
 

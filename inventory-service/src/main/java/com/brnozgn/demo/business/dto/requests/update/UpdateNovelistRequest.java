@@ -14,7 +14,7 @@ public class UpdateNovelistRequest {
 
 	@NotEmpty
 	@NotNull
-	private String id;
+	private String nId;
 
 	@NotEmpty
 	@NotNull

@@ -15,7 +15,7 @@ public class UpdateCategoryRequest {
 	@NotEmpty
 	@NotNull
 	@Size(min = 16, max = 16, message = "id size must be 16 digits")
-	private String id;
+	private String cId;
 
 	@NotEmpty
 	@NotNull

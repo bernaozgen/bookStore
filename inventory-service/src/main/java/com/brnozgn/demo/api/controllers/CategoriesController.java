@@ -48,14 +48,14 @@ public class CategoriesController {
 		return this.categoryService.getAll();
 	}
 
-	@GetMapping("/{id}")
-	public DataResult<GetByCategoryIdResponse> getById(@PathVariable @Valid String id) {
-		return this.categoryService.getById(id);
+	@GetMapping("/{cId}")
+	public DataResult<GetByCategoryIdResponse> getById(@PathVariable @Valid String cId) {
+		return this.categoryService.getById(cId);
 	}
 
-	@DeleteMapping("/{id}")
-	public Result delete(@PathVariable @Valid String id) {
-		return this.categoryService.delete(id);
+	@DeleteMapping("/{cId}")
+	public Result delete(@PathVariable @Valid String cId) {
+		return this.categoryService.delete(cId);
 	}
 
 }

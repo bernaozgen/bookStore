@@ -13,8 +13,8 @@ import lombok.AllArgsConstructor;
 public class CategoryRules {
 	private CategoryRepository repository;
 	
-	public void existById(String id) {
-		if( this.repository.findById(id).get()== null) {
+	public void existById(String cId) {
+		if( this.repository.findById(cId).get()== null) {
 			throw new BusinessException(Messages.CategoryIdNotFound);
 			
 		}

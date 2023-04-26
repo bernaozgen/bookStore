@@ -48,13 +48,13 @@ public class NovelistsController {
 		return this.service.getAll();
 	}
 
-	@GetMapping("/{id}")
-	public DataResult<GetByNovelistIdResponse> getById(@PathVariable String id) {
-		return this.service.getById(id);
+	@GetMapping("/{nId}")
+	public DataResult<GetByNovelistIdResponse> getById(@PathVariable String nId) {
+		return this.service.getById(nId);
 	}
 
-	@DeleteMapping("/{id}")
-	public Result delete(@PathVariable String id) {
-		return this.service.delete(id);
+	@DeleteMapping("/{nId}")
+	public Result delete(@PathVariable String nId) {
+		return this.service.delete(nId);
 	}
 }

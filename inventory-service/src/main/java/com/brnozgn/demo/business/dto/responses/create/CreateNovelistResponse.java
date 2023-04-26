@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateNovelistResponse {
-	private String id;
+	private String nId;
 	private String name;
 	private String surname;
 	private String summary;
