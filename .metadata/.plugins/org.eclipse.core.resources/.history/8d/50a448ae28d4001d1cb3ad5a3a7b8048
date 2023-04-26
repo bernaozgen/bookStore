@@ -1,5 +1,0 @@
-package com.brnozgn.demo.business.dto.responses.update;
-
-public class UpdatePublishingHouseResponse {
-
-}

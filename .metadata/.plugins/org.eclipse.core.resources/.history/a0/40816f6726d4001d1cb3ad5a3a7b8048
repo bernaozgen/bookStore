@@ -1,8 +1,0 @@
-package com.brnozgn.demo.api.controllers;
-
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
-public class PublishingHousesController {
-
-}

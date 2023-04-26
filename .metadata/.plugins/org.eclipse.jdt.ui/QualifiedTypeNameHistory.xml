@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.requests.create.CreateCategoryRequest"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.utilities.mapping.ModelMapperService"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.create.CreateCategoryResponse"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.requests.update.UpdateCategoryRequest"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.business.abstracts.CategoryService"/>
-    <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.utilities.mapping.ModelMapperConfig"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestControllerAdvice"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getAll.GetAllCategoryResponse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.update.UpdateCategoryResponse"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.entities.Category"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getById.GetByCategoryId"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.dataAccess.CategoryRepository"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.rules.CategoryRules"/>
@@ -27,7 +17,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.update.UpdatePublishingHouseResponse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.requests.update.UpdatePublishingHouseRequest"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getAll.GetAllPublishingHouseResponse"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseId"/>
@@ -39,7 +28,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.dataAccess.PublishingHouseRepository"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.rules.PublishingHouseRules"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.entities.PublishingHouse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.utilities.exceptions.BusinessException"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
@@ -47,12 +35,10 @@
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.abstracts.NovelistService"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.dataAccess.NovelistRepository"/>
     <fullyQualifiedTypeName name="org.modelmapper.ModelMapper"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.entities.Novelist"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.utilities.results.SuccessDataResult"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.constants.Messages"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.utilities.results.DataResult"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.create.CreateNovelistResponse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.requests.create.CreateNovelistRequest"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
@@ -60,4 +46,18 @@
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.brnozgn.demo.utilities.results.DataResult"/>
+    <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseIdResponse"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumns"/>
+    <fullyQualifiedTypeName name="com.brnozgn.demo.entities.Novelist"/>
+    <fullyQualifiedTypeName name="com.brnozgn.demo.entities.Category"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.brnozgn.demo.entities.Book"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="com.brnozgn.demo.entities.PublishingHouse"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.CascadeType"/>
 </qualifiedTypeNameHistroy>

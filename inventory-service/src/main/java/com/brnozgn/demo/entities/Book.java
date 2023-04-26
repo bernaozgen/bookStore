@@ -23,10 +23,6 @@ public class Book {
 	@Column(name = "bookName")
 	private String bookName;
 
-	@ManyToOne
-	@JoinColumn(name = "novelistId")
-	private Novelist novelist;
-
 	@Column(name = "explication")
 	private String explication;
 
@@ -37,10 +33,15 @@ public class Book {
 	private double price;
 
 	@ManyToOne()
-	@JoinColumn(name = "categoryId")
+	@JoinColumn(name = "novelist_id")
+	private Novelist novelist;
+
+	@ManyToOne()
+	@JoinColumn(name = "category_id")
 	private Category category;
 
 	@ManyToOne()
-	@JoinColumn(name="publishingHouseId")
+	@JoinColumn(name = "publishingHouse_id")
 	private PublishingHouse publishingHouse;
+
 }

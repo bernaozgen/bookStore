@@ -1,0 +1,5 @@
+package com.brnozgn.demo.entities;
+
+public class Book {
+
+}

@@ -15,24 +15,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="publishingHouses")
+@Table(name = "publishingHouses")
 public class PublishingHouse {
-	
+
 	@Id
-	@Column(name="id")
+	@Column(name = "id")
 	private String id;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	
-	@Column(name="explication")
+
+	@Column(name = "explication")
 	private String explication;
-	
+
 	@OneToMany(mappedBy = "publishingHouse")
 	private List<Book> books;
-	
-	
-	
-	
-
 }
