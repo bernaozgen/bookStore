@@ -19,8 +19,8 @@ public interface CategoryService {
 
 	DataResult<List<GetAllCategoryResponse>> getAll();
 
-	DataResult<GetByCategoryIdResponse> getById(String cId);
+	DataResult<GetByCategoryIdResponse> getById(String id);
 
-	Result delete(String cId);
+	Result delete(String id);
 
 }

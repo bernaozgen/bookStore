@@ -3,14 +3,15 @@ package com.brnozgn.demo.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "books")
@@ -32,16 +33,14 @@ public class Book {
 	@Column(name = "price")
 	private double price;
 
-	@ManyToOne()
-	@JoinColumn(name = "novelist_id")
+	@ManyToOne
 	private Novelist novelist;
 
-	@ManyToOne()
-	@JoinColumn(name = "category_id")
+	@ManyToOne
 	private Category category;
 
-	@ManyToOne()
-	@JoinColumn(name = "publishingHouse_id")
+	@ManyToOne
 	private PublishingHouse publishingHouse;
+
 
 }

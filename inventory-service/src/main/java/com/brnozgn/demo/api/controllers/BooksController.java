@@ -2,6 +2,7 @@ package com.brnozgn.demo.api.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,10 +28,10 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/books")
+@RequestMapping("api/books")
 @AllArgsConstructor
 public class BooksController {
-
+    @Autowired
 	private BookService bookService;
 
 	@PostMapping

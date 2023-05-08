@@ -36,14 +36,14 @@ public class NovelistManager implements NovelistService {
 	public DataResult<CreateNovelistResponse> add(CreateNovelistRequest novelistRequest) {
 		this.rules.checkIfExistsNovelistName(novelistRequest.getName(), novelistRequest.getSurname());
 		Novelist novelist = this.modelMapper.map(novelistRequest, Novelist.class);
-		novelist.setNId(UUID.randomUUID().toString());
+		novelist.setId(UUID.randomUUID().toString());
 		this.repository.save(novelist);
 		CreateNovelistResponse response = this.modelMapper.map(novelist, CreateNovelistResponse.class);
 		return new SuccessDataResult<CreateNovelistResponse>(response, Messages.CreatedNovelist);
 	}
 
 	public DataResult<UpdateNovelistResponse> update(UpdateNovelistRequest request) {
-		this.rules.checkIfExistsNovelistId(request.getNId());
+		this.rules.checkIfExistsNovelistId(request.getId());
 		Novelist novelist = this.modelMapper.map(request, Novelist.class);
 		this.repository.save(novelist);
 
@@ -60,16 +60,16 @@ public class NovelistManager implements NovelistService {
 		return new SuccessDataResult<List<GetAllNovelistResponse>>(responses, Messages.ListedNovelist);
 	}
 
-	public DataResult<GetByNovelistIdResponse> getById(String nId) {
-		this.rules.checkIfExistsNovelistId(nId);
-		Novelist novelist = this.repository.findById(nId).get();
+	public DataResult<GetByNovelistIdResponse> getById(String id) {
+		this.rules.checkIfExistsNovelistId(id);
+		Novelist novelist = this.repository.findById(id).get();
 		GetByNovelistIdResponse response = this.modelMapper.map(novelist, GetByNovelistIdResponse.class);
 		return new SuccessDataResult<GetByNovelistIdResponse>(response, Messages.ListedNovelist);
 	}
 
-	public Result delete(String nId) {
-		this.rules.checkIfExistsNovelistId(nId);
-		this.repository.deleteById(nId);
+	public Result delete(String id) {
+		this.rules.checkIfExistsNovelistId(id);
+		this.repository.deleteById(id);
 
 		return new SuccessResult(Messages.DeletedNovelist);
 	}

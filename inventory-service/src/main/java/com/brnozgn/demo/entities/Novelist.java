@@ -8,18 +8,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "novelists")
 public class Novelist {
 	@Id
-	@Column(name = "nId")
-	private String nId;
+	@Column(name = "id")
+	private String id;
 
 	@Column(name = "name")
 	private String name;

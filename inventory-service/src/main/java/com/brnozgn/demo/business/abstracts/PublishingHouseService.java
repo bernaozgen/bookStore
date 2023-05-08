@@ -18,7 +18,7 @@ public interface PublishingHouseService {
 
 	DataResult<List<GetAllPublishingHouseResponse>> getAll();
 
-	DataResult<GetByPublishingHouseIdResponse> getById(String pId);
+	DataResult<GetByPublishingHouseIdResponse> getById(String id);
 
-	Result delete(String pId);
+	Result delete(String id);
 }
