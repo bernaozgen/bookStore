@@ -57,7 +57,8 @@ public class BookManager implements BookService {
 	public DataResult<List<GetAllBookResponse>> getAll() {
 		List<Book> books = this.repository.findAll();
 		List<GetAllBookResponse> responses = books.stream()
-				.map(book -> this.modelMapper.forResponse().map(book, GetAllBookResponse.class)).collect(Collectors.toList());
+				.map(book -> this.modelMapper.forResponse().map(book, GetAllBookResponse.class))
+				.collect(Collectors.toList());
 		return new SuccessDataResult<List<GetAllBookResponse>>(responses, Messages.ListedBook);
 	}
 
@@ -72,6 +73,16 @@ public class BookManager implements BookService {
 		this.rules.checkIfExistsByBookId(id);
 		this.repository.deleteById(id);
 		return new SuccessResult(Messages.DeletedBook);
+	}
+
+	@Override
+	public void updateBookStock(String bookId, int stock) {
+		this.rules.checkIfExistsByBookId(bookId);
+
+		Book book = repository.findById(bookId).get();
+		stock = stock - 1;
+		book.setStock(stock);
+		this.repository.save(book);
 	}
 
 }

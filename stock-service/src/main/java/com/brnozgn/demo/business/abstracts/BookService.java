@@ -21,4 +21,6 @@ public interface BookService {
 	DataResult<GetByBookIdResponse> getById(String id);
 
 	Result delete(String id);
+
+	void updateBookStock(String bookId, int stock);
 }

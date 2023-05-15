@@ -31,7 +31,7 @@ public class BasketsControllers {
 		return this.service.add(request);
 	}
 	
-	@DeleteMapping("{/id}")
+	@DeleteMapping("/{id}")
 	public Result delete(String id) {
 		return this.service.delete(id);
 	}

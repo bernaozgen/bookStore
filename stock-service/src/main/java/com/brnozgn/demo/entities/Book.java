@@ -32,17 +32,19 @@ public class Book {
 	@Column(name = "price")
 	private double price;
 
+	@Column(name = "stock")
+	private int stock;
+
 	@ManyToOne
-	@JoinColumn(name="novelist_id")
+	@JoinColumn(name = "novelist_id")
 	private Novelist novelist;
 
 	@ManyToOne
-	@JoinColumn(name="category_id")
+	@JoinColumn(name = "category_id")
 	private Category category;
 
 	@ManyToOne
-	@JoinColumn(name="publishing_house_id")
+	@JoinColumn(name = "publishing_house_id")
 	private PublishingHouse publishingHouse;
-
 
 }

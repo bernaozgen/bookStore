@@ -13,4 +13,5 @@ public class CreateBasketResponse {
 	private int totalPcs;
 	private int leadTime;
 	private double totalPrice;
+	private int stock;
 }
