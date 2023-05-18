@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateBasketRequest {
+
 	private String bookId;
 	private int totalPcs;
 	private int leadTime;
 	private double totalPrice;
-	private int stock;
 }

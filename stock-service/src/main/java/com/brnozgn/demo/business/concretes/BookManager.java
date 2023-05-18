@@ -17,6 +17,8 @@ import com.brnozgn.demo.business.dto.responses.update.UpdateBookResponse;
 import com.brnozgn.demo.business.rules.BookRules;
 import com.brnozgn.demo.dataAccess.BookRepository;
 import com.brnozgn.demo.entities.Book;
+import com.brnozgn.demo.events.basket.BookCreatedEvent;
+import com.brnozgn.demo.kafka.BasketConsumer;
 import com.brnozgn.demo.utilities.mapping.ModelMapperService;
 import com.brnozgn.demo.utilities.results.DataResult;
 import com.brnozgn.demo.utilities.results.Result;
@@ -76,12 +78,11 @@ public class BookManager implements BookService {
 	}
 
 	@Override
-	public void updateBookStock(String bookId, int stock) {
+	public void updateBookStock(String bookId, int totalPcs) {
 		this.rules.checkIfExistsByBookId(bookId);
 
 		Book book = repository.findById(bookId).get();
-		stock = stock - 1;
-		book.setStock(stock);
+		book.setStock(book.getStock() - totalPcs);
 		this.repository.save(book);
 	}
 

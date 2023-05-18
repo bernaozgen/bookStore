@@ -20,7 +20,7 @@ public class BasketConsumer {
 	@KafkaListener(topics = "basket-created", groupId = "basket-create")
 	public void consume(BookCreatedEvent event) {
 		LOGGER.info(String.format("Order event received in stock service => %s", event.toString()));
-		bookService.updateBookStock(event.getBookId(), event.getStock());
+		bookService.updateBookStock(event.getBookId(), event.getTotalPcs());
 
 	}
 }

@@ -37,11 +37,11 @@ public class BasketManager implements BasketService {
 		basket.setId(UUID.randomUUID().toString());
 		this.repository.save(basket);
 
-		BookCreatedEvent bookCreatedEvent = new BookCreatedEvent();
+		/*BookCreatedEvent bookCreatedEvent = new BookCreatedEvent();
 		bookCreatedEvent.setBookId(request.getBookId());
-		bookCreatedEvent.setStock(request.getStock());
+		bookCreatedEvent.setTotalPcs(request.getTotalPcs());
 		bookCreatedEvent.setMessages("Basket Created");
-		this.basketProducer.sendMessage(bookCreatedEvent);
+		this.basketProducer.sendMessage(bookCreatedEvent);*/
 
 		CreateBasketResponse response = this.mapper.map(basket, CreateBasketResponse.class);
 		return new SuccessDataResult<CreateBasketResponse>(response, Messages.CreatedBasket);

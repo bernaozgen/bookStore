@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BookCreatedEvent {
 	private String bookId;
-	private int stock;
+	private int totalPcs;
 	private String messages;
-
 }

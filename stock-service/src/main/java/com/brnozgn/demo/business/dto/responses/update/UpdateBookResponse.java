@@ -16,4 +16,5 @@ public class UpdateBookResponse {
 	private double price;
 	private String categoryId;
 	private String publishingHouseId;
+	private int stock;
 }
