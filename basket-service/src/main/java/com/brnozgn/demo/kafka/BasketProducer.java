@@ -17,14 +17,14 @@ import lombok.AllArgsConstructor;
 public class BasketProducer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BasketProducer.class);
 
-	private KafkaTemplate<String, BookCreatedEvent> kafkaTempleteBookCreated;
+	private final KafkaTemplate<String, Object> kafkaTemplate;
 
 	public void sendMessage(BookCreatedEvent bookCreatedEvent) {
 		LOGGER.info(String.format("Book Created Event => %s", bookCreatedEvent.toString()));
 
 		Message<BookCreatedEvent> message = MessageBuilder.withPayload(bookCreatedEvent)
-				.setHeader(KafkaHeaders.TOPIC, "createBook").build();
-		kafkaTempleteBookCreated.send(message);
+				.setHeader(KafkaHeaders.TOPIC, "basket-created").build();
+		kafkaTemplate.send(message);
 	}
 
 }

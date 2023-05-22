@@ -35,6 +35,7 @@ public class BasketManager implements BasketService {
 	public DataResult<CreateBasketResponse> add(CreateBasketRequest request) {
 		Basket basket = this.mapper.map(request, Basket.class);
 		basket.setId(UUID.randomUUID().toString());
+		
 		this.repository.save(basket);
 
 		BookCreatedEvent bookCreatedEvent = new BookCreatedEvent();
@@ -44,6 +45,7 @@ public class BasketManager implements BasketService {
 		this.basketProducer.sendMessage(bookCreatedEvent);
 
 		CreateBasketResponse response = this.mapper.map(basket, CreateBasketResponse.class);
+		
 		return new SuccessDataResult<CreateBasketResponse>(response, Messages.CreatedBasket);
 	}
 

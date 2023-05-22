@@ -17,8 +17,6 @@ import com.brnozgn.demo.business.dto.responses.update.UpdateBookResponse;
 import com.brnozgn.demo.business.rules.BookRules;
 import com.brnozgn.demo.dataAccess.BookRepository;
 import com.brnozgn.demo.entities.Book;
-import com.brnozgn.demo.events.basket.BookCreatedEvent;
-import com.brnozgn.demo.kafka.BasketConsumer;
 import com.brnozgn.demo.utilities.mapping.ModelMapperService;
 import com.brnozgn.demo.utilities.results.DataResult;
 import com.brnozgn.demo.utilities.results.Result;
@@ -35,7 +33,7 @@ public class BookManager implements BookService {
 	private ModelMapperService modelMapper;
 	private BookRules rules;
 
-	// private BookRules rules;
+	
 	public DataResult<CreateBookResponse> add(CreateBookRequest bookRequest) {
 
 		Book book = this.modelMapper.forRequest().map(bookRequest, Book.class);

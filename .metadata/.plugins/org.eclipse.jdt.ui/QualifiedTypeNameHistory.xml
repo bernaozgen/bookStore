@@ -56,8 +56,8 @@
     <fullyQualifiedTypeName name="org.springframework.kafka.annotation.KafkaListener"/>
     <fullyQualifiedTypeName name="java.awt.print.Book"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.kafka.BasketConsumer"/>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.events.basket.BookCreatedEvent"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.brnozgn.demo.events.basket.BookCreatedEvent"/>
 </qualifiedTypeNameHistroy>
