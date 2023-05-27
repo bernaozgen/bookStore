@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getAll.GetAllNovelistResponse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.update.UpdateNovelistResponse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.requests.update.UpdateNovelistRequest"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getById.GetByPublishingHouseIdResponse"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.events.basket.BookCreatedEvent"/>
+    <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
 </qualifiedTypeNameHistroy>

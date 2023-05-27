@@ -33,7 +33,6 @@ public class BookManager implements BookService {
 	private ModelMapperService modelMapper;
 	private BookRules rules;
 
-	
 	public DataResult<CreateBookResponse> add(CreateBookRequest bookRequest) {
 
 		Book book = this.modelMapper.forRequest().map(bookRequest, Book.class);
