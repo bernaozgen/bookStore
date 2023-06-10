@@ -14,12 +14,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BasketConsumer {
 
-	private BookService bookService;
-	
+	private final BookService bookService;
+
 	@KafkaListener(topics = "basket-created", groupId = "basket-create")
 	public void consume(BookCreatedEvent event) {
 		bookService.updateBookStock(event.getBookId(), event.getTotalPcs());
-		log.info(String.format("Order event received in stock service => %s", event.toString()));
+		log.info(String.format("Basket created event consumed {}", event.toString()));
 		
 
 	}

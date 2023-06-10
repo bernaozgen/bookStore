@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.get.getAll.GetAllPublishingHouseResponse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.responses.update.UpdatePublishingHouseResponse"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.business.dto.requests.update.UpdatePublishingHouseRequest"/>
-    <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="com.brnozgn.demo.events.basket.BookCreatedEvent"/>
     <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
 </qualifiedTypeNameHistroy>
